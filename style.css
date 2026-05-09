@@ -1,16 +1,86 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: sans-serif; background: #0a0f1e; color: #e0e0e0; padding: 20px; }
-.container { max-width: 800px; margin: auto; background: #151b2e; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,180,216,0.2); }
-h1 { color: #00b4d8; text-align: center; border-bottom: 2px solid #00b4d8; padding-bottom: 10px; }
-p { line-height: 1.8; margin: 15px 0; }
-.section { background: #1e263a; margin: 20px 0; padding: 15px; border-radius: 10px; border-right: 5px solid #00b4d8; }
-.section h2 { color: #90e0ef; }
-ul { list-style: none; padding: 0; }
-li { padding: 8px 0; border-bottom: 1px solid #333; }
-li:last-child { border-bottom: none; }
-a { color: #48cae4; text-decoration: none; font-weight: bold; }
-a:hover { text-decoration: underline; }
-code { background: #000; padding: 2px 6px; border-radius: 4px; color: #00ff88; }
-pre { background: #10131f; padding: 15px; border-radius: 8px; overflow-x: auto; }
-.footer { text-align: center; margin-top: 30px; color: #ccc; font-size: 0.9em; }
-.footer a { color: #00b4d8; }
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دليل المطور محمد حميدان | Termux و Python و Kali</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- شريط التنقل -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">⚡ <span>المطور محمد حميدان</span></a>
+    <ul class="nav-links">
+      <li><a href="#basics">أساسيات</a></li>
+      <li><a href="#tools">أدوات</a></li>
+      <li><a href="#projects">شرح أكواد</a></li>
+      <li><a href="about.html">عن المطور</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <!-- البطاقة التعريفية -->
+    <div class="card">
+      <h1>📱 دليل Termux العملي</h1>
+      <p style="text-align: center; font-size: 1.1em;">أنا <strong>المطور محمد حميدان</strong>، أوثّق هنا رحلتي في تحويل هاتفي إلى مختبر برمجي متكامل. كل درس هو تجربة شخصية، وكل سطر كود كتبته بيدي.</p>
+    </div>
+
+    <!-- أساسيات Termux -->
+    <div class="card" id="basics">
+      <h2>📘 أساسيات Termux</h2>
+      <div class="lesson-grid">
+        <a href="termux-basics.html" class="lesson-card">
+          <span class="icon">🔹</span> أوامر Linux الأساسية داخل Termux
+        </a>
+        <a href="termux-setup.html" class="lesson-card">
+          <span class="icon">🔹</span> تثبيت Termux وإعداد التخزين
+        </a>
+        <a href="pkg-management.html" class="lesson-card">
+          <span class="icon">🔹</span> إدارة الحزم بـ pkg
+        </a>
+      </div>
+    </div>
+
+    <!-- أدوات المطور -->
+    <div class="card" id="tools">
+      <h2>⚙️ أدوات المطور</h2>
+      <div class="lesson-grid">
+        <a href="python-first-steps.html" class="lesson-card">
+          <span class="icon">🐍</span> تثبيت Python وتشغيل السكربتات
+        </a>
+        <a href="python-git-upload.html" class="lesson-card">
+          <span class="icon">🐙</span> Git و GitHub من الهاتف
+        </a>
+        <a href="kali-nethunter.html" class="lesson-card">
+          <span class="icon">🐉</span> تشغيل Kali Nethunter
+        </a>
+      </div>
+    </div>
+
+    <!-- شرح أكواد جاهزة -->
+    <div class="card" id="projects">
+      <h2>🧩 شرح أكواد جاهزة</h2>
+      <div class="lesson-grid">
+        <a href="build-site.html" class="lesson-card">
+          <span class="icon">🌐</span> رفع موقع على GitHub Pages (هذا الموقع!)
+        </a>
+        <a href="ssh-key-setup.html" class="lesson-card">
+          <span class="icon">🔐</span> إنشاء مفتاح SSH للاتصال الآمن
+        </a>
+        <a href="bash-automation.html" class="lesson-card">
+          <span class="icon">🤖</span> سكربت لأتمتة المهام
+        </a>
+      </div>
+    </div>
+
+    <!-- دعوة للاستمرار -->
+    <div class="card" style="text-align: center;">
+      <p style="font-size: 1.3em;">🌟 المحتوى يبنى تدريجياً من الهاتف. تابع التحديثات!</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>بُني من الهاتف بإخلاص | <a href="https://github.com/moheynasir-ctrl">المطور محمد حميدان</a> | <a href="https://moheynasir-ctrl.github.io">الموقع الرئيسي</a></p>
+  </div>
+</body>
+</html>
