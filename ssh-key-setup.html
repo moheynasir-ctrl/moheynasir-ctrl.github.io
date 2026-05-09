@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إنشاء مفتاح SSH | المطور محمد حميدان</title>
+  <style>
+    body { font-family: sans-serif; background: #0a0f1e; color: #e0e0e0; margin: 0; padding: 20px; }
+    .container { max-width: 800px; margin: auto; background: #151b2e; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,180,216,0.2); }
+    h1 { color: #00b4d8; border-bottom: 2px solid #00b4d8; padding-bottom: 10px; text-align: center; }
+    h2 { color: #90e0ef; margin-top: 30px; }
+    p, li { line-height: 1.9; }
+    .code-box { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 15px; margin: 15px 0; overflow-x: auto; font-family: monospace; color: #c9d1d9; }
+    .code-box code { color: #7ee787; }
+    .note { background: #1e2a3a; border-right: 4px solid #00b4d8; padding: 12px; border-radius: 8px; margin: 20px 0; }
+    a { color: #48cae4; }
+    .footer { text-align: center; margin-top: 30px; color: #ccc; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 إنشاء مفتاح SSH والاتصال الآمن</h1>
+    <p>في هذا الدرس، سأشرح كيفية إنشاء مفتاح SSH وربطه بـ GitHub، لتتمكن من رفع مشاريعك بدون كتابة كلمة مرور كل مرة. هذا هو الأساس الذي استخدمته لبناء هذا الموقع.</p>
+
+    <h2>📦 تثبيت OpenSSH</h2>
+    <div class="code-box"><code>pkg install openssh -y</code></div>
+
+    <h2>🔑 توليد المفتاح</h2>
+    <div class="code-box"><code>ssh-keygen -t ed25519 -C "moheynasir@gmail.com"</code></div>
+    <p>عند السؤال عن مكان الحفظ، اضغط <strong>Enter</strong> للقبول بالمكان الافتراضي. وعند سؤاله عن كلمة مرور، اتركها فارغة (Enter).</p>
+
+    <h2>🚀 تشغيل ssh-agent وإضافة المفتاح</h2>
+    <div class="code-box">
+      <code>eval "$(ssh-agent -s)"</code><br>
+      <code>ssh-add ~/.ssh/id_ed25519</code>
+    </div>
+
+    <h2>📋 نسخ المفتاح العام</h2>
+    <div class="code-box"><code>cat ~/.ssh/id_ed25519.pub</code></div>
+    <p>انسخ الناتج كاملاً (يبدأ بـ <code>ssh-ed25519</code> وينتهي ببريدك).</p>
+
+    <h2>🔗 إضافة المفتاح إلى GitHub</h2>
+    <p>اذهب إلى: <a href="https://github.com/settings/keys" target="_blank">github.com/settings/keys</a>، واضغط <strong>New SSH Key</strong>، وألصق المفتاح، ثم احفظ.</p>
+
+    <h2>✅ اختبار الاتصال</h2>
+    <div class="code-box"><code>ssh -T git@github.com</code></div>
+    <p>إذا نجح، ستظهر رسالة ترحيب باسم مستخدمك. الآن يمكنك استخدام Git مع GitHub دون إدخال أي كلمة مرور.</p>
+
+    <div class="note">
+      <strong>💡 خلاصة تجربتي:</strong> هذا المفتاح هو بوابتك الآمنة. أنشئه مرة واحدة فقط على كل جهاز، واستخدمه لجميع مستودعاتك. لقد وفر علي عناء كتابة البريد وكلمة المرور في كل Push.
+    </div>
+
+    <p style="text-align: center; margin-top: 30px;"><a href="index.html">🏠 العودة للصفحة الرئيسية</a></p>
+
+    <div class="footer">
+      <p>بُني من الهاتف بإخلاص | <a href="https://github.com/moheynasir-ctrl">المطور محمد حميدان</a></p>
+    </div>
+  </div>
+</body>
+</html>
