@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أساسيات Termux | المطور محمد حميدان</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📘 أساسيات Termux</h1>
+    <p>هنا أوثق الأوامر التي أستخدمها يومياً داخل Termux. هذه تجربتي الشخصية، قد تختلف عندك.</p>
+
+    <div class="section">
+      <h2>تحديث النظام والحزم</h2>
+      <pre><code>pkg update && pkg upgrade -y</code></pre>
+      <p>يقوم بتحديث قائمة الحزم ثم ترقية كل شيء إلى أحدث إصدار.</p>
+    </div>
+
+    <div class="section">
+      <h2>الوصول للتخزين</h2>
+      <pre><code>termux-setup-storage</code></pre>
+      <p>يعطي صلاحية لتصل إلى ملفات هاتفك عبر مجلد <code>~/storage</code>.</p>
+    </div>
+
+    <div class="section">
+      <h2>التنقل بين المجلدات</h2>
+      <pre><code>ls        # عرض الملفات في المجلد الحالي
+cd ..     # الرجوع للمجلد الأب
+cd ~      # الذهاب لمجلد home</code></pre>
+    </div>
+
+    <p><a href="index.html">⬅ العودة للرئيسية</a></p>
+  </div>
+</body>
+</html>
