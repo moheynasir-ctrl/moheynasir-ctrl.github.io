@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سكربتات الأتمتة | المطور محمد حميدان</title>
+  <style>
+    body { font-family: sans-serif; background: #0a0f1e; color: #e0e0e0; margin: 0; padding: 20px; }
+    .container { max-width: 800px; margin: auto; background: #151b2e; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,180,216,0.2); }
+    h1 { color: #00b4d8; border-bottom: 2px solid #00b4d8; padding-bottom: 10px; text-align: center; }
+    h2 { color: #90e0ef; margin-top: 30px; }
+    p, li { line-height: 1.9; }
+    .code-box { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 15px; margin: 15px 0; overflow-x: auto; font-family: monospace; color: #c9d1d9; }
+    .code-box code { color: #7ee787; }
+    .note { background: #1e2a3a; border-right: 4px solid #00b4d8; padding: 12px; border-radius: 8px; margin: 20px 0; }
+    a { color: #48cae4; }
+    .footer { text-align: center; margin-top: 30px; color: #ccc; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🤖 سكربت Bash لأتمتة المهام اليومية</h1>
+    <p>في هذا الدرس، سأشاركك سكربتات Bash التي أستخدمها لتوفير الوقت في Termux. <strong>الأتمتة</strong> هي سر المطور الذكي.</p>
+
+    <h2>📜 سكربت التحديث اليومي</h2>
+    <p>أنشئ ملف <code>update.sh</code>:</p>
+    <div class="code-box"><code>nano update.sh</code></div>
+    <p>واكتب بداخله:</p>
+    <div class="code-box">
+      <code>#!/bin/bash</code><br>
+      <code>echo "جاري تحديث الحزم..."</code><br>
+      <code>pkg update && pkg upgrade -y</code><br>
+      <code>echo "تم التحديث بنجاح!"</code>
+    </div>
+    <p>اجعل الملف قابلاً للتنفيذ:</p>
+    <div class="code-box"><code>chmod +x update.sh</code></div>
+    <p>وشغّله:</p>
+    <div class="code-box"><code>./update.sh</code></div>
+
+    <h2>📁 سكربت عرض حالة المشروع</h2>
+    <p>أنشئ <code>status.sh</code>:</p>
+    <div class="code-box"><code>nano status.sh</code></div>
+    <p>واكتب:</p>
+    <div class="code-box">
+      <code>#!/bin/bash</code><br>
+      <code>echo "📂 المجلد الحالي: $(pwd)"</code><br>
+      <code>echo "📄 عدد الملفات: $(ls | wc -l)"</code><br>
+      <code>echo "💾 المساحة المتبقية:"</code><br>
+      <code>df -h /data</code>
+    </div>
+    <p>اجعل الملف قابلاً للتنفيذ وشغّله:</p>
+    <div class="code-box"><code>chmod +x status.sh && ./status.sh</code></div>
+
+    <h2>🔄 سكربت رفع المشروع إلى GitHub بضغطة واحدة</h2>
+    <p>أكثر سكربت أستخدمه! أنشئ <code>push.sh</code>:</p>
+    <div class="code-box"><code>nano push.sh</code></div>
+    <p>واكتب:</p>
+    <div class="code-box">
+      <code>#!/bin/bash</code><br>
+      <code>git add .</code><br>
+      <code>echo "أدخل وصف التغيير:"</code><br>
+      <code>read msg</code><br>
+      <code>git commit -m "$msg"</code><br>
+      <code>git push</code><br>
+      <code>echo "✅ تم الرفع بنجاح!"</code>
+    </div>
+
+    <div class="note">
+      <strong>💡 نصيحة:</strong> تعلم Bash حوّل هاتفي إلى أداة إنتاجية حقيقية. بدلاً من كتابة عدة أوامر كل مرة، صرت أنفذ سكربتاً واحداً. جرب كتابة سكربتاتك الخاصة!
+    </div>
+
+    <p style="text-align: center; margin-top: 30px;"><a href="index.html">🏠 العودة للصفحة الرئيسية</a></p>
+
+    <div class="footer">
+      <p>بُني من الهاتف بإخلاص | <a href="https://github.com/moheynasir-ctrl">المطور محمد حميدان</a></p>
+    </div>
+  </div>
+</body>
+</html>
